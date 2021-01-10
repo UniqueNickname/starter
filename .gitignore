@@ -5,6 +5,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+debug.log
+
+# macOS
+.DS_Store
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -33,9 +37,6 @@ bower_components
 
 # node-waf configuration
 .lock-wscript
-
-# Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
 
 # Dependency directories
 node_modules/
@@ -75,21 +76,18 @@ typings/
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 
-# Next.js build output
+# build / generate output
 .next
-
-# Nuxt.js build / generate output
 .nuxt
 dist
+build
+.vuepress/dist
 
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and *not* Next.js
 # https://nextjs.org/blog/next-9-1#public-directory-support
 # public
-
-# vuepress build output
-.vuepress/dist
 
 # Serverless directories
 .serverless/
@@ -102,3 +100,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vscode

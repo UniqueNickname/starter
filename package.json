@@ -1,0 +1,10 @@
+{
+  "name": "project-starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/UniqueNickname/starter.git",
+  "author": "Unique <dr.art-47@yandex.ru>",
+  "license": "MIT",
+  "private": true,
+  "browserslist": "> 0.25%, not dead"
+}
