@@ -1,7 +1,7 @@
 # editorconfig.org
 root = true
 
-[*.{js,ts,scss,sass,css}]
+[*.{js,ts,scss,sass,css,yaml}]
 indent_style = space
 end_of_line = lf
 charset = utf-8
@@ -9,7 +9,7 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 max_line_length = 80
 
-[*.{js,ts,html,vue}]
+[*.{js,ts,html,vue,yaml}]
 indent_size = 4
 
 [*.{scss,sass,css}]

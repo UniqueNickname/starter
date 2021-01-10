@@ -1,0 +1,26 @@
+import webpack from 'webpack'
+
+export const configStats: webpack.Configuration['stats'] = {
+    assets: false,
+    builtAt: false,
+    cached: false,
+    cachedAssets: false,
+    children: false,
+    chunks: false,
+    chunkGroups: false,
+    chunkOrigins: false,
+    colors: true,
+    depth: false,
+    env: false,
+    errors: true,
+    errorDetails: true,
+    entrypoints: false,
+    hash: false,
+    modules: false,
+    publicPath: false,
+    performance: false,
+    reasons: false,
+    timings: false,
+    version: false,
+    warnings: false,
+}
