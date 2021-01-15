@@ -5,6 +5,7 @@ import {
     HTMLPlugin,
     pluginMiniCssExtract,
     eslintPlugin,
+    vuePlugin,
     WebpackbarPlugin,
 } from '../plugins'
 
@@ -14,5 +15,6 @@ export const configPlugins: webpack.Configuration['plugins'] = [
     cleanPlugin,
     copyPlugin,
     eslintPlugin,
+    vuePlugin,
     WebpackbarPlugin,
 ]
