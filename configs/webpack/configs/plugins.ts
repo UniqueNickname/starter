@@ -4,6 +4,8 @@ import {
     copyPlugin,
     HTMLPlugin,
     pluginMiniCssExtract,
+    eslintPlugin,
+    WebpackbarPlugin,
 } from '../plugins'
 
 export const configPlugins: webpack.Configuration['plugins'] = [
@@ -11,4 +13,6 @@ export const configPlugins: webpack.Configuration['plugins'] = [
     HTMLPlugin,
     cleanPlugin,
     copyPlugin,
+    eslintPlugin,
+    WebpackbarPlugin,
 ]

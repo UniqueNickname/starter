@@ -49,6 +49,7 @@ rules:
         - overrides:
               "?": "before"
               ":": "before"
+    "arrow-parens": 0
 overrides:
     - files:
           - "./configs/**/*.ts"

@@ -7,26 +7,31 @@ const removeConsole = [
     { exclude: ['error', 'warn'] },
 ]
 
-export const getBabelLoader = (ext: 'js' | 'ts'): webpack.RuleSetUseItem => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const loader: any = {
-        loader: 'babel-loader',
-        options: {
-            presets: ['@babel/preset-env'],
-            plugins: [
-                [
-                    '@babel/plugin-transform-typescript',
-                    {
-                        isTSX: false,
-                        allExtensions: true,
-                        allowDeclareFields: true,
+export const getBabelLoader = (ext: 'js' | 'ts'): webpack.RuleSetUseItem => ({
+    loader: 'babel-loader',
+    options: {
+        presets: [
+            [
+                '@babel/preset-env',
+                {
+                    targets: {
+                        esmodules: true,
                     },
-                ],
-                ['@babel/plugin-proposal-class-properties', { loose: true }],
+                },
             ],
-        },
-    }
-    if (ext === 'ts') loader.options.presets.push('@babel/preset-typescript')
-    if (isProd) loader.options.plugins.push(removeConsole)
-    return loader
-}
+            ext === 'ts' ? '@babel/preset-typescript' : undefined,
+        ].filter(preset => preset),
+        plugins: [
+            [
+                '@babel/plugin-transform-typescript',
+                {
+                    isTSX: false,
+                    allExtensions: true,
+                    allowDeclareFields: true,
+                },
+            ],
+            ['@babel/plugin-proposal-class-properties', { loose: true }],
+            isProd ? removeConsole : undefined,
+        ].filter(plugin => plugin),
+    },
+})
