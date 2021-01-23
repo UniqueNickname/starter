@@ -10,6 +10,5 @@ export const PATHS = {
     styles: path.resolve(source, 'assets/scss'),
     templates: path.resolve(source, 'templates'),
     build: path.resolve(root, 'build'),
-    server: path.resolve(root, 'server'),
     nodeModules: path.resolve(root, 'node_modules'),
 }

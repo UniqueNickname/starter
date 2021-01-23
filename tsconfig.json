@@ -8,11 +8,11 @@
         "strict": true,
         "baseUrl": ".",
         "paths": {
-            "@/*": ["*", "src/*", "server/*"]
+            "@/*": ["*", "src/*"]
         },
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
-        "typeRoots" : ["./configs/@types", "./src/@types", "./node_modules/@types"]
+        "typeRoots": ["./src/@types", "./node_modules/@types"]
     }
 }

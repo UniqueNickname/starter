@@ -1,13 +1,12 @@
 import webpack from 'webpack'
 
 import { PATHS } from '../../paths'
-import { getBabelLoader, vueLoader } from '../loaders'
+import { getBabelLoader } from '../loaders'
 
-type ScriptExtType = 'js' | 'ts' | 'vue'
-const scriptExt: ScriptExtType[] = ['js', 'ts', 'vue']
+type ScriptExtType = 'js' | 'ts'
+const scriptExt: ScriptExtType[] = ['js', 'ts']
 
-const getLoaders = (ext: ScriptExtType) =>
-    ext === 'vue' ? vueLoader : [getBabelLoader(ext)]
+const getLoaders = (ext: ScriptExtType) => [getBabelLoader(ext)]
 
 const getRule = (ext: ScriptExtType): webpack.RuleSetRule => ({
     test: new RegExp(`\\.${ext}$`),

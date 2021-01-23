@@ -20,7 +20,7 @@ export const getBabelLoader = (ext: 'js' | 'ts'): webpack.RuleSetUseItem => ({
                 },
             ],
             ext === 'ts' ? '@babel/preset-typescript' : undefined,
-        ].filter(preset => preset),
+        ].filter(preset => !!preset),
         plugins: [
             [
                 '@babel/plugin-transform-typescript',

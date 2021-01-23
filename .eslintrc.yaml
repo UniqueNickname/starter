@@ -3,8 +3,13 @@ env:
     es6: true
     node: true
     browser: true
+parserOptions:
+    ecmaVersion: 2020
+    sourceType: "module"
+    project: "./tsconfig.json"
 extends:
     - "eslint:recommended"
+    - "airbnb-typescript/base"
     - "prettier"
     - "prettier/@typescript-eslint"
     - "plugin:@typescript-eslint/eslint-recommended"
@@ -12,34 +17,22 @@ extends:
     - "plugin:import/errors"
     - "plugin:import/warnings"
     - "plugin:import/typescript"
-    - "airbnb-typescript/base"
     - "plugin:sonarjs/recommended"
 plugins:
-    - "@typescript-eslint"
-    - "prettier"
     - "import"
+    - "prettier"
     - "sonarjs"
-parserOptions:
-    ecmaVersion: 2020
-    sourceType: "module"
-    project: "./tsconfig.json"
+    - "@typescript-eslint"
 settings:
     "import/ignore":
         - ".(scss|less|css)$"
 rules:
-    "@typescript-eslint/semi": 0
-    "@typescript-eslint/indent":
-        - "error"
-        - 4
     "prettier/prettier":
-        - "warn"
-        - parser: "babel-ts"
-          singleQuote: true
-          semi: false
-          tabWidth: 4
-          printWidth: 80
-          arrowParens: "avoid"
-          trailingComma: "all"
+        - "error"
+    "@typescript-eslint/semi":
+        - "off"
+    "@typescript-eslint/indent":
+        - "off"
     "no-process-env": "error"
     "no-confusing-arrow": "off"
     "implicit-arrow-linebreak": "off"
@@ -56,3 +49,12 @@ overrides:
       rules:
           "import/no-extraneous-dependencies": "off"
           "import/prefer-default-export": "off"
+    - files:
+        - "./configs/env.ts"
+      rules:
+        "no-process-env": "off"
+    - files:
+        - "./postcss.config.js"
+      rules:
+        "global-require": "off"
+        "@typescript-eslint/no-var-requires": "off"
